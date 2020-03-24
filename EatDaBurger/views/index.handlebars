@@ -1,38 +1,63 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="headerBanner container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <img src="./public/assets/images/Burgertime.gif" class="img-fluid" alt="Burger Time Image">
+      </div>
+      <div class="col-9">
+        <h1 class="display-4">Walter's Burger Barn!</h1>
+        <p class="lead">Welcome to our takeout restaurant! order our designs or make your own!</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>Burgers that are avaialble to eat!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless eaten}}
-      {{> burgers/burger-block eaten=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers already eaten!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if eaten}}
-      {{> burgers/burger-block eaten=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+<div class="row">
+  <div class="col-6">
+    <h3 class="text-center"><i class="fas fa-hamburger"></i> Burgers Ready Now!</h3>
+    <p class="text-center m-2">Click on any of the deliscious burgers below to have them right now!</p>
+    <div>
+      <ul>
+        {{#each burgers}}
+        {{#unless eaten}}
+        {{> burgers/burger-block eaten=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="eaten">Eaten?</label><br>
-    <input type="radio" name="eaten" value="1" checked> Already eaten!<br>
-    <input type="radio" name="eaten" value="0"> Available
+  <div class="col-6">
+    <h3 class="text-center"><i class="fas fa-hamburger"></i> Our Specialty Burgers!</h3>
+    <p class="col-12 text-center">These are some of our famous burgers that we can
+      make right away. Click on one and it will be yours shortly!</p>
+    <ul>
+      <ul>
+        {{#each burgers}}
+        {{#if eaten}}
+        {{> burgers/burger-block eaten=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
   </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+</div>
+
+<div>
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="eaten">Eaten?</label><br>
+      <input type="radio" name="eaten" value="1" checked> Already eaten! Reorder?<br>
+      <input type="radio" name="eaten" value="0"> We have one ready!
+    </div>
+
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
