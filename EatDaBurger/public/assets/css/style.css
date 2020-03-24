@@ -1,3 +1,19 @@
+body {
+  background: url("../images/RedDot_Burger.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.headerBanner {
+  background: #fbeec1;
+}
+
+.menu {
+  background: #fbeec1;
+}
+
 li {
   padding: 5px;
   margin: 5px;
