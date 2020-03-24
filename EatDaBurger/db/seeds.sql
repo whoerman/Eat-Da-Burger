@@ -8,7 +8,7 @@ INSERT INTO burgers (name, eaten) VALUES ('THE NASHVILLE HOT - vermont raised sp
 INSERT INTO burgers (name) VALUES ('SWEET HOME AVOCADO - turkey patty, cheddar cheese, avocado, bacon, ancho aioli, lettuce, tomato');
 INSERT INTO burgers (name) VALUES ('NOT-CHO BRGR - mff beef patty, ancho aioli, lettuce, tomato & onion relish, jalapenos, cheese sauce, avocado, tortilla strips');
 INSERT INTO burgers (name) VALUES ('OFF THE HOOK - blackened tuna, cilantro aioli, avocado, cucumber ginger slaw');
-INSERT INTO burgers (name, eaten) VALUES ('ETTING FIGGY W/ IT - mff beef patty, smoked fig & apple jam, brie, arugula ', true);
+INSERT INTO burgers (name, eaten) VALUES ('GETTING FIGGY W/ IT - mff beef patty, smoked fig & apple jam, brie, arugula ', true);
 INSERT INTO burgers (name, eaten) VALUES ('EARTH BURGER - fried quinoa & lentil veggie patty, sautéed mushrooms, arugula walnut pesto, lettuce, & tomato served on a gruyere crusted bun', true);
 INSERT INTO burgers (name, eaten) VALUES ('THE FOUR HORSEMEN - mff beef patty, poblano salsa, jalapenos, ancho aioli, crumbled gorgonzola, lettuce, tomato', true);
 INSERT INTO burgers (name) VALUES ('PORTWALK POUTINE - mff beef patty, house fries, cheese curds, gravy');

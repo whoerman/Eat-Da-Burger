@@ -1,6 +1,7 @@
-var express = require("express");
+const express = require("express");
+const bodyParser = require('body-parser')
 
-var router = express.Router();
+let router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
 var burger = require("../models/burger.js");
@@ -11,7 +12,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    console.log("get statement loaded the data successfully");
     res.render("index", hbsObject);
   });
 });
@@ -29,11 +30,9 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
   console.log("condition", condition);
-
   burger.update({
-    eaten: req.body.eaten
+    eaten: 1    //req.body.eaten                           //here is where i think it is broken
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -44,7 +43,7 @@ router.put("/api/burgers/:id", function(req, res) {
   });
 });
 
-router.delete("/api/burgerss/:id", function(req, res) {
+router.delete("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function(result) {
