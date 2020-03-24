@@ -1,5 +1,6 @@
 // Import the ORM to create functions that will interact with the database.
-var orm = require("../../17-CatsApp/Solved/config/orm.js");
+var orm = require("../../EatDaBurger/config/orm.js");
+//EatDaBurger\config\orm.js
 
 var burger = {
   all: function(cb) {
