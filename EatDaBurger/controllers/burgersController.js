@@ -3,10 +3,10 @@ const bodyParser = require('body-parser')
 
 let router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// Create the routes
 router.get("/", function(req, res) {
   burger.all(function(data) {
     var hbsObject = {
@@ -32,10 +32,10 @@ router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   console.log("condition", condition);
   burger.update({
-    eaten: 1   //req.body.eaten                           //here is where i think it is broken
+    eaten: 1   //req.body.eaten in the cat example - could not make that work - now only one way                         
   }, condition, function(result) {
     if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
+      // probably an unnecessary fail if a row does not change
       return res.status(404).end();
     } else {
       res.status(200).end();
@@ -48,7 +48,7 @@ router.delete("/api/burgers/:id", function(req, res) {
 
   burger.delete(condition, function(result) {
     if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
+      // probably an unnecessary fail if a row does not change
       return res.status(404).end();
     } else {
       res.status(200).end();
