@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 //adds the question marks for query strings
 function printQuestionMarks(num) {
